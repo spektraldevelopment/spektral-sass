@@ -1,22 +1,30 @@
 @import 'spektral-sass';
-
 @mixin exampleText() {
-	@include header;
-	text-align: center;
-	padding-top: 50%;
-	padding-bottom: 50%;
+    @include header;
+    text-align: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }
 
-.example {
+.category {
+    .example {
+        width: 200px;
+        .test-square {
+            @include exampleText;
+            cursor: pointer;
+            background-color: #ff0000;
+        }
+    }
+}
 
-	width: 200px;
-	.test-square {
-		@include exampleText;
-		background-color: #ff0000;
-		opacity: 0;
-	}
+#fadeTo {
+	 opacity: 0.25;
+}
 
-	.fadeIn {
-		@include fade(5s);	
-	}
+#fadeTo:hover {
+	@include fadeTo(500ms, 1);
+}
+
+#fade {
+	@include fade(5s);
 }

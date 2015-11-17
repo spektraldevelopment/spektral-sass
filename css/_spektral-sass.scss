@@ -1,49 +1,85 @@
 //SPEKTRAL SASS
-@mixin header($size: 25px)
-{
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: $size;
+@mixin header($size: 25px) {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: $size;
 }
 
-@mixin paragraph($size: 18px)
-{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: $size;
-  font-weight: 500;
-  letter-spacing: 0.05em;
+@mixin paragraph($size: 18px) {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: $size;
+    font-weight: 500;
+    letter-spacing: 0.05em;
 }
 
-@mixin transparentBG($color, $alpha)
-{
-  background-color: rgba(red($color), green($color), blue($color), $alpha);
+@mixin transparentBG($color, $alpha) {
+    background-color: rgba(red($color), green($color), blue($color), $alpha);
 }
 
-@mixin shadow($hOffset: inset, $vOffset: 0px, $blur: 0px, $spread: 5px, $color: #000)
-{
-  -moz-box-shadow: $hOffset $vOffset $blur $spread $color;
-  -webkit-box-shadow: $hOffset $vOffset $blur $spread $color;
-  box-shadow: $hOffset $vOffset $blur $spread $color;
+@mixin shadow($hOffset: inset, $vOffset: 0px, $blur: 0px, $spread: 5px, $color: #000) {
+    -moz-box-shadow: $hOffset $vOffset $blur $spread $color;
+    -webkit-box-shadow: $hOffset $vOffset $blur $spread $color;
+    box-shadow: $hOffset $vOffset $blur $spread $color;
 }
 
-@mixin textShadow($X: 1px, $Y: 1px, $blur: 3px, $color: #888)
-{
-  text-shadow: $X $Y $blur $color;
+@mixin roundedCorners($radius: 5px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
 }
 
-@mixin roundedCorners($radius: 5px)
-{
-  -webkit-border-radius: $radius;
-  -moz-border-radius: $radius;
-  -ms-border-radius: $radius;
-  -o-border-radius: $radius;
-  border-radius: $radius;
+@mixin alpha($amount) {
+    /* IE 8 */
+    
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($amount * 100) + ")";
+    /*Good browsers*/
+    
+    opacity: $amount;
 }
 
+//Transitions
+@mixin fadeTo($speed: 1s, $amount: 1, $easeType: linear) {
+    transition: opacity $speed $easeType;
+    -moz-transition: opacity $speed $easeType;
+    -webkit-transition: opacity $speed $easeType;
+    opacity: $amount;
+}
 
 //Animations
-@mixin fade($speed: 1s, $amount: 1) {
-  opacity: $amount;
-  transition: opacity $speed ease-in-out;
-  -moz-transition: opacity $speed ease-in-out;
-  -webkit-transition: opacity $speed ease-in-out;
+@mixin fade($speed, $start: 0, $end: 1, $count: 1) {
+    -webkit-animation: alpha $speed $count;
+    -moz-animation: alpha $speed $count;
+    -o-animation: alpha $speed $count;
+    animation: alpha $speed $count;
+    @-webkit-keyframes alpha {
+        0% {
+            opacity: $start;
+        }
+        100% {
+            opacity: $end;
+        }
+    }
+    @-moz-keyframes alpha {
+        0% {
+            opacity: $start;
+        }
+        100% {
+            opacity: $end;
+        }
+    }
+    @-o-keyframes alpha {
+        0% {
+            opacity: $start;
+        }
+        100% {
+            opacity: $end;
+        }
+    }
+    @keyframes alpha {
+        0% {
+            opacity: $start;
+        }
+        100% {
+            opacity: $end;
+        }
+    }
 }
