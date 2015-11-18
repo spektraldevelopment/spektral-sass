@@ -15,7 +15,7 @@
     background-color: rgba(red($color), green($color), blue($color), $alpha);
 }
 
-@mixin shadow($hOffset: inset, $vOffset: 0px, $blur: 0px, $spread: 5px, $color: #000) {
+@mixin shadow($spread: 5px, $blur: 0, $color: #000, $hOffset: inset, $vOffset: 0) {
     -moz-box-shadow: $hOffset $vOffset $blur $spread $color;
     -webkit-box-shadow: $hOffset $vOffset $blur $spread $color;
     box-shadow: $hOffset $vOffset $blur $spread $color;
@@ -29,10 +29,8 @@
 
 @mixin alpha($amount) {
     /* IE 8 */
-    
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($amount * 100) + ")";
     /*Good browsers*/
-    
     opacity: $amount;
 }
 

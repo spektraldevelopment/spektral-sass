@@ -8,23 +8,42 @@
 
 .category {
     .example {
-        width: 200px;
+        margin-bottom: 5px;
+        width: 50%;
         .test-square {
             @include exampleText;
             cursor: pointer;
+            color: #fff;
             background-color: #ff0000;
         }
     }
 }
 
-#fadeTo {
+#fade-to {
 	 opacity: 0.25;
 }
 
-#fadeTo:hover {
+#fade-to:hover {
 	@include fadeTo(500ms, 1);
 }
 
 #fade {
 	@include fade(5s);
+}
+
+#transparent-bg {
+    @include transparentBG(#0000ff, 0.25);
+}
+
+#shadow {
+    @include shadow(20px);
+}
+
+#rounded-corners {
+    @include roundedCorners(10px);
+    background-color: #0000ff;
+}
+
+#alpha {
+    @include alpha(0.5);
 }
