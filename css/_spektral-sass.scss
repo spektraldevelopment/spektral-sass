@@ -34,6 +34,36 @@
     opacity: $amount;
 }
 
+@mixin gradient($topColor: #444, $bottomColor: #999) {
+    background-color: $topColor;
+    background-image: -webkit-linear-gradient(top, $topColor, $bottomColor);
+    /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+    background-image: linear-gradient(to bottom, $topColor, $bottomColor);
+    /* Chrome 26, Firefox 16+, IE 10+, Opera */
+}
+
+@mixin rotate($deg) {
+    $deg: $deg + deg;
+    -webkit-transform: rotate($deg);
+    // Chrome, Opera 15+, Safari 3.1+ 
+    -ms-transform: rotate($deg);
+    // IE 9
+    transform: rotate($deg);
+    // Firefox 16+, IE 10+, Opera */
+}
+
+@mixin scale($scaleX, $scaleY: $scaleX) {
+    -webkit-transform: scale($scaleX, $scaleY);  /* Chrome, Opera 15+, Safari 3.1+ */
+      -ms-transform: scale($scaleX, $scaleY);  /* IE 9 */
+          transform: scale($scaleX, $scaleY);  /* Firefox 16+, IE 10+, Opera */
+}
+
+@mixin borderBox{
+    -webkit-box-sizing: border-box; /* Android ≤ 2.3, iOS ≤ 4 */
+     -moz-box-sizing: border-box; /* Firefox ≤ 28 */
+          box-sizing: border-box; /* Chrome, Firefox 29+, IE 8+, Opera, Safari 5.1 */
+}
+
 //Transitions
 @mixin fadeTo($speed: 1s, $amount: 1, $easeType: linear) {
     transition: opacity $speed $easeType;

@@ -2,33 +2,45 @@
 @mixin exampleText() {
     @include header;
     text-align: center;
-    padding-top: 5%;
-    padding-bottom: 5%;
+}
+
+h1 {
+    @include header(50px);
+    text-align: center;
+}
+
+h2 {
+    @include header();
+    text-align: center;
 }
 
 .category {
     .example {
         margin-bottom: 5px;
-        width: 50%;
+        width: 100%;
         .test-square {
             @include exampleText;
+            padding: 2%;
             cursor: pointer;
             color: #fff;
             background-color: #ff0000;
+            :nth-child(even) {
+                background-color: #0000ff;
+            }
         }
     }
 }
 
 #fade-to {
-	 opacity: 0.25;
+    opacity: 0.25;
 }
 
 #fade-to:hover {
-	@include fadeTo(500ms, 1);
+    @include fadeTo(500ms, 1);
 }
 
 #fade {
-	@include fade(5s);
+    @include fade(5s);
 }
 
 #transparent-bg {
@@ -41,9 +53,20 @@
 
 #rounded-corners {
     @include roundedCorners(10px);
-    background-color: #0000ff;
 }
 
 #alpha {
     @include alpha(0.5);
+}
+
+#gradient {
+    @include gradient();
+}
+
+#rotate {
+    @include rotate(5);
+}
+
+#scale {
+    @include scale(0.5);
 }
