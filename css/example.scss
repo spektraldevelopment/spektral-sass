@@ -28,6 +28,16 @@ h2 {
                 background-color: #0000ff;
             }
         }
+
+        .responsive-header {
+            @include header(25px, center);
+            @include responsiveText(50px, 5.0);
+        }
+
+        .responsive-paragraph {
+            @include paragraph(18px, center);
+            @include responsiveText(100px, 3);
+        }
     }
 }
 

@@ -1,11 +1,13 @@
 h1 {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 50px;
+  text-align: left;
   text-align: center; }
 
 h2 {
   font-family: Verdana, Geneva, sans-serif;
   font-size: 25px;
+  text-align: left;
   text-align: center; }
 
 .category .example {
@@ -14,6 +16,7 @@ h2 {
   .category .example .test-square {
     font-family: Verdana, Geneva, sans-serif;
     font-size: 25px;
+    text-align: left;
     text-align: center;
     padding: 2%;
     cursor: pointer;
@@ -21,6 +24,26 @@ h2 {
     background-color: #ff0000; }
     .category .example .test-square :nth-child(even) {
       background-color: #0000ff; }
+  .category .example .responsive-header {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    font-size: 50px;
+    /* old */
+    font-size: 5vm;
+    /* IE9 */
+    font-size: 5vmin; }
+  .category .example .responsive-paragraph {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-align: center;
+    font-size: 100px;
+    /* old */
+    font-size: 3vm;
+    /* IE9 */
+    font-size: 3vmin; }
 
 #fade-to {
   opacity: 0.25; }
