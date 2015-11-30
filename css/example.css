@@ -10,40 +10,95 @@ h2 {
   text-align: left;
   text-align: center; }
 
-.category .example {
-  margin-bottom: 5px;
-  width: 100%; }
-  .category .example .test-square {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 25px;
-    text-align: left;
-    text-align: center;
-    padding: 2%;
-    cursor: pointer;
-    color: #fff;
-    background-color: #ff0000; }
-    .category .example .test-square :nth-child(even) {
-      background-color: #0000ff; }
-  .category .example .responsive-header {
-    font-family: Verdana, Geneva, sans-serif;
-    font-size: 25px;
-    text-align: center;
-    font-size: 50px;
-    /* old */
-    font-size: 5vm;
-    /* IE9 */
-    font-size: 5vmin; }
-  .category .example .responsive-paragraph {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-align: center;
-    font-size: 100px;
-    /* old */
-    font-size: 3vm;
-    /* IE9 */
-    font-size: 3vmin; }
+.category {
+  display: block; }
+  .category .example {
+    margin-bottom: 5px;
+    width: 100%; }
+    .category .example .test-square {
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 25px;
+      text-align: left;
+      text-align: center;
+      padding: 2%;
+      cursor: pointer;
+      color: #fff;
+      background-color: #ff0000; }
+      .category .example .test-square:nth-child(even) {
+        background-color: #0000ff; }
+    .category .example .responsive-header {
+      font-family: Verdana, Geneva, sans-serif;
+      font-size: 25px;
+      text-align: center;
+      font-size: 50px;
+      /* old */
+      font-size: 5vm;
+      /* IE9 */
+      font-size: 5vmin; }
+    .category .example .responsive-paragraph {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-align: center;
+      font-size: 100px;
+      /* old */
+      font-size: 3vm;
+      /* IE9 */
+      font-size: 3vmin; }
+  .category .grid-example {
+    box-sizing: border-box;
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+    zoom: 1;
+    /* For IE 6/7 (trigger hasLayout) */ }
+    .category .grid-example:before, .category .grid-example:after {
+      content: "";
+      display: table; }
+    .category .grid-example:after {
+      clear: both; }
+    .category .grid-example div {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-align: left;
+      color: #fff;
+      text-align: center;
+      background-color: #cecece; }
+      .category .grid-example div:nth-child(even) {
+        background-color: #666; }
+    .category .grid-example .two-column {
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      margin: 0 0.5% 0.5% 0.5%;
+      width: 49%; }
+    .category .grid-example .three-column {
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      margin: 0 0.5% 0.5% 0.5%;
+      width: 32.33%; }
+    .category .grid-example .four-column {
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      margin: 0 0.5% 0.5% 0.5%;
+      width: 24%; }
+    .category .grid-example .five-column {
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      margin: 0 0.5% 0.5% 0.5%;
+      width: 19%; }
+    .category .grid-example .six-column {
+      box-sizing: border-box;
+      display: block;
+      float: left;
+      margin: 0 0.5% 0.5% 0.5%;
+      width: 15.66%; }
 
 #fade-to {
   opacity: 0.25; }

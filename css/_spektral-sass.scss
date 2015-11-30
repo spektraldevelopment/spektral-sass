@@ -15,8 +15,12 @@
 
 @mixin responsiveText($max: 50px, $min: 5.0) {
     //font-size: 10vw;
-    font-size: $max;    /* old */
-    font-size: $min+vm;   /* IE9 */
+    font-size: $max;
+    /* old */
+    
+    font-size: $min+vm;
+    /* IE9 */
+    
     font-size: $min+vmin;
 }
 
@@ -38,8 +42,10 @@
 
 @mixin alpha($amount) {
     /* IE 8 */
+    
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($amount * 100) + ")";
     /*Good browsers*/
+    
     opacity: $amount;
 }
 
@@ -47,6 +53,7 @@
     background-color: $topColor;
     background-image: -webkit-linear-gradient(top, $topColor, $bottomColor);
     /* Chrome 10-25, iOS 5+, Safari 5.1+ */
+    
     background-image: linear-gradient(to bottom, $topColor, $bottomColor);
     /* Chrome 26, Firefox 16+, IE 10+, Opera */
 }
@@ -62,15 +69,25 @@
 }
 
 @mixin scale($scaleX, $scaleY: $scaleX) {
-    -webkit-transform: scale($scaleX, $scaleY);  /* Chrome, Opera 15+, Safari 3.1+ */
-      -ms-transform: scale($scaleX, $scaleY);  /* IE 9 */
-          transform: scale($scaleX, $scaleY);  /* Firefox 16+, IE 10+, Opera */
+    -webkit-transform: scale($scaleX, $scaleY);
+    /* Chrome, Opera 15+, Safari 3.1+ */
+    
+    -ms-transform: scale($scaleX, $scaleY);
+    /* IE 9 */
+    
+    transform: scale($scaleX, $scaleY);
+    /* Firefox 16+, IE 10+, Opera */
 }
 
-@mixin borderBox{
-    -webkit-box-sizing: border-box; /* Android ≤ 2.3, iOS ≤ 4 */
-     -moz-box-sizing: border-box; /* Firefox ≤ 28 */
-          box-sizing: border-box; /* Chrome, Firefox 29+, IE 8+, Opera, Safari 5.1 */
+@mixin borderBox {
+    -webkit-box-sizing: border-box;
+    /* Android ≤ 2.3, iOS ≤ 4 */
+    
+    -moz-box-sizing: border-box;
+    /* Firefox ≤ 28 */
+    
+    box-sizing: border-box;
+    /* Chrome, Firefox 29+, IE 8+, Opera, Safari 5.1 */
 }
 
 //Transitions
@@ -121,7 +138,25 @@
     }
 }
 
+@mixin gridContainer() {
+    box-sizing: border-box;
+    clear: both;
+    padding: 0px;
+    margin: 0px;
+    zoom: 1;
+    /* For IE 6/7 (trigger hasLayout) */
+    
+    &:before, &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
 @mixin column($percent, $mLeft, $mRight, $mBottom) {
+    box-sizing: border-box;
     display: block;
     float: left;
     margin: 0 $mRight $mBottom $mLeft;
@@ -141,5 +176,33 @@
 }
 
 @mixin fiveColumn($percent: 20%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
+    @include column($percent, $mLeft, $mRight, $mBottom);
+}
+
+@mixin sixColumn($percent: 16.66%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
+    @include column($percent, $mLeft, $mRight, $mBottom);
+}
+
+@mixin sevenColumn($percent: 14.29%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
+    @include column($percent, $mLeft, $mRight, $mBottom);
+}
+
+@mixin eightColumn($percent: 12.5%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
+    @include column($percent, $mLeft, $mRight, $mBottom);
+}
+
+@mixin nineColumn($percent: 11.11%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
+    @include column($percent, $mLeft, $mRight, $mBottom);
+}
+
+@mixin tenColumn($percent: 10%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
+    @include column($percent, $mLeft, $mRight, $mBottom);
+}
+
+@mixin elevenColumn($percent: 9.1%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
+    @include column($percent, $mLeft, $mRight, $mBottom);
+}
+
+@mixin twelveColumn($percent: 8.3%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
     @include column($percent, $mLeft, $mRight, $mBottom);
 }
