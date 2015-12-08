@@ -14,7 +14,7 @@ rotate($deg);
 ```
 
 ### scale
-```scale
+```sass
 scale($scaleX, $scaleY: $scaleX);
 ```
 
