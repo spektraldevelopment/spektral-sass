@@ -46,8 +46,8 @@ h2 {
             @include paragraph;
             color: #fff;
             text-align: center;
-            //padding: 50px;
             background-color: #cecece;
+            height: 50px;
             &:nth-child(even) {
                 background-color: #666;
             }
@@ -66,6 +66,14 @@ h2 {
         }
         .six-column {
             @include sixColumn;
+        }
+
+        .sixty-column {
+            @include column(60%);
+        }
+
+        .forty-column {
+            @include column(40%);
         }
     }
 }

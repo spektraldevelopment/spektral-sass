@@ -17,10 +17,8 @@
     //font-size: 10vw;
     font-size: $max;
     /* old */
-    
     font-size: $min+vm;
     /* IE9 */
-    
     font-size: $min+vmin;
 }
 
@@ -42,18 +40,15 @@
 
 @mixin alpha($amount) {
     /* IE 8 */
-    
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + ($amount * 100) + ")";
     /*Good browsers*/
-    
     opacity: $amount;
 }
 
 @mixin gradient($topColor: #444, $bottomColor: #999) {
     background-color: $topColor;
     background-image: -webkit-linear-gradient(top, $topColor, $bottomColor);
-    /* Chrome 10-25, iOS 5+, Safari 5.1+ */
-    
+    /* Chrome 10-25, iOS 5+, Safari 5.1+ */ 
     background-image: linear-gradient(to bottom, $topColor, $bottomColor);
     /* Chrome 26, Firefox 16+, IE 10+, Opera */
 }
@@ -139,7 +134,7 @@
 }
 
 @mixin gridContainer() {
-    box-sizing: border-box;
+    //box-sizing: border-box;
     clear: both;
     padding: 0px;
     margin: 0px;
@@ -155,7 +150,7 @@
     }
 }
 
-@mixin column($percent, $mLeft, $mRight, $mBottom) {
+@mixin column($percent, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
     box-sizing: border-box;
     display: block;
     float: left;
@@ -163,46 +158,46 @@
     width: ($percent - ($mLeft + $mRight));
 }
 
-@mixin twoColumn($percent: 50%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin twoColumn($percent: 50%) {
+    @include column($percent);
 }
 
-@mixin threeColumn($percent: 33.33%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin threeColumn($percent: 33.33%) {
+    @include column($percent);
 }
 
-@mixin fourColumn($percent: 25%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin fourColumn($percent: 25%) {
+    @include column($percent);
 }
 
-@mixin fiveColumn($percent: 20%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin fiveColumn($percent: 20%) {
+    @include column($percent);
 }
 
-@mixin sixColumn($percent: 16.66%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin sixColumn($percent: 16.66%) {
+    @include column($percent);
 }
 
-@mixin sevenColumn($percent: 14.29%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin sevenColumn($percent: 14.29%) {
+    @include column($percent);
 }
 
-@mixin eightColumn($percent: 12.5%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin eightColumn($percent: 12.5%) {
+    @include column($percent);
 }
 
-@mixin nineColumn($percent: 11.11%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin nineColumn($percent: 11.11%) {
+    @include column($percent);
 }
 
-@mixin tenColumn($percent: 10%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin tenColumn($percent: 10%) {
+    @include column($percent);
 }
 
-@mixin elevenColumn($percent: 9.1%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin elevenColumn($percent: 9.1%) {
+    @include column($percent);
 }
 
-@mixin twelveColumn($percent: 8.3%, $mLeft: 0.5%, $mRight: 0.5%, $mBottom: 0.5%) {
-    @include column($percent, $mLeft, $mRight, $mBottom);
+@mixin twelveColumn($percent: 8.3%) {
+    @include column($percent);
 }
