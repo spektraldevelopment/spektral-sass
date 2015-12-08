@@ -78,6 +78,7 @@ h2 {
     }
 }
 
+//Transitions
 #fade-to {
     opacity: 0.25;
 }
@@ -86,10 +87,20 @@ h2 {
     @include fadeTo(500ms, 1);
 }
 
+#move-to {
+    width: 50%;
+}
+
+#move-to:hover {
+    @include moveTo(100px, 0);
+}
+
+//Animation
 #fade {
     @include fade(5s);
 }
 
+//Shorthand
 #transparent-bg {
     @include transparentBG(#0000ff, 0.25);
 }
@@ -116,4 +127,8 @@ h2 {
 
 #scale {
     @include scale(0.5);
+}
+
+#border-box {
+    @include borderBox;
 }
